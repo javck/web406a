@@ -17,17 +17,18 @@ class JobSeeder extends Seeder
     public function run()
     {
         Job::truncate(); //清空表格與欄位
-        $faker = Faker\Factory::create('zh_TW');
-        for ($i=0; $i < 500; $i++) { 
-            Job::create([
-                'title' => $faker->name,
-                'salary' => rand(100,10000),
-                'enabled' => $faker->randomElement([true,false]) ,
-                'content' => $faker->realText,
-                'cgy_id'  => rand(1,3),
-                'start_at' => Carbon::now()->addDays(rand(-5,5))
-            ]);
-        }
-        
+        //$faker = Faker\Factory::create('zh_TW');
+
+        // for ($i=0; $i < 500; $i++) { 
+        //     Job::create([
+        //         'title' => $faker->name,
+        //         'salary' => rand(100,10000),
+        //         'enabled' => $faker->randomElement([true,false]) ,
+        //         'content' => $faker->realText,
+        //         'cgy_id'  => rand(1,3),
+        //         'start_at' => Carbon::now()->addDays(rand(-5,5))
+        //     ]);
+        // }
+        Job::factory()->times(500)->create();
     }
 }
