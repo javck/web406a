@@ -21,14 +21,14 @@ class DatabaseSeeder extends Seeder
         $this->setFKCheckOff();
         $this->call([
             // MySettingSeeder::class,
-            CgySeeder::class,
+            // CgySeeder::class,
             // TagSeeder::class,
             // UserSeeder::class,
             // ArticleSeeder::class,
             // CommentSeeder::class,
             // ElementSeeder::class,
             // PortfolioSeeder::class,
-            // //ContactSeeder::class,
+            //ContactSeeder::class,
             // ItemSeeder::class,
             // OrderSeeder::class,
             // MyDataTypeSeeder::class,
@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             // MyPermissionSeeder::class,
             // MyRoleSeeder::class,
             // MyPermissionRoleSeeder::class,
-            // MyTranslationSeeder::class
+            // MyTranslationSeeder::class,
             JobSeeder::class
         ]);
         //enable foreign key check for this connection before running seeders

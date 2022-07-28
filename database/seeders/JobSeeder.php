@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Carbon\Carbon;
 use App\Models\Job;
 use Illuminate\Database\Seeder;
+use Faker;
 
 class JobSeeder extends Seeder
 {
@@ -16,14 +17,17 @@ class JobSeeder extends Seeder
     public function run()
     {
         Job::truncate(); //清空表格與欄位
-
-        Job::create([
-            'title' => '搬家',
-            'salary' => 1000,
-            'enabled' => true,
-            'content' => '輕鬆好搬家',
-            'cgy_id'  => 1,
-            'start_at' => Carbon::now()
-        ]);
+        $faker = Faker\Factory::create('zh_TW');
+        for ($i=0; $i < 500; $i++) { 
+            Job::create([
+                'title' => $faker->name,
+                'salary' => rand(100,10000),
+                'enabled' => $faker->randomElement([true,false]) ,
+                'content' => $faker->realText,
+                'cgy_id'  => rand(1,3),
+                'start_at' => Carbon::now()->addDays(rand(-5,5))
+            ]);
+        }
+        
     }
 }
