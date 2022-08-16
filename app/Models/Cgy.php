@@ -64,4 +64,10 @@ class Cgy extends Model
             return $query;
         }
     }
+
+    //關係函式
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }

@@ -58,9 +58,12 @@ class CgyController extends Controller
     {
         //$cgy = Cgy::find($id);
         //$cgy = Cgy::where('sort','>=',2)->orderBy('created_at','desc')->get();
-        return $cgy;
+        //return $cgy->tasks()->orderBy('salary','desc')->get();
         // $sum = Cgy::sum('sort');
         // return $sum;
+        $task1 = \App\Models\Task::find(1);
+        $cgy->tasks()->save($task1);
+        return $cgy->tasks()->orderBy('id','asc')->get();
     }
 
     /**
