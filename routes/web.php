@@ -44,6 +44,15 @@ Route::group(['prefix' => '/demo', 'namespace' => '\App\Http\Controllers'], func
     Route::post('/save', 'SiteController@save');
 });
 
+Route::resource('items','App\Http\Controllers\ItemController');
+Route::resource('tasks','App\Http\Controllers\TaskController');
+//Route::resource('cgies','App\Http\Controllers\CgyController');
+Route::get('cgies','App\Http\Controllers\CgyController@index');
+Route::get('cgies/{cgy}','App\Http\Controllers\CgyController@show');
+Route::get('cgies/store','App\Http\Controllers\CgyController@store');
+Route::get('cgies/{cgy}/del','App\Http\Controllers\CgyController@destroy');
+Route::get('cgies/{cgy}/update','App\Http\Controllers\CgyController@update');
+
 Route::get('/', '\App\Http\Controllers\SiteController@renderWelcomePage');
 Route::view('/404-page', '404-page');
 

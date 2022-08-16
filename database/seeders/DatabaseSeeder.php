@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             // CommentSeeder::class,
             // ElementSeeder::class,
             // PortfolioSeeder::class,
-            //ContactSeeder::class,
+            // ContactSeeder::class,
             // ItemSeeder::class,
             // OrderSeeder::class,
             // MyDataTypeSeeder::class,
@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             // MyRoleSeeder::class,
             // MyPermissionRoleSeeder::class,
             // MyTranslationSeeder::class,
-            JobSeeder::class
+            TaskSeeder::class
         ]);
         //enable foreign key check for this connection before running seeders
         $this->setFKCheckOn();

@@ -3,11 +3,11 @@
 namespace Database\Seeders;
 
 use Carbon\Carbon;
-use App\Models\Job;
+use App\Models\Task;
 use Illuminate\Database\Seeder;
 use Faker;
 
-class JobSeeder extends Seeder
+class TaskSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,7 @@ class JobSeeder extends Seeder
      */
     public function run()
     {
-        Job::truncate(); //清空表格與欄位
+        Task::truncate(); //清空表格與欄位
         //$faker = Faker\Factory::create('zh_TW');
 
         // for ($i=0; $i < 500; $i++) { 
@@ -29,6 +29,6 @@ class JobSeeder extends Seeder
         //         'start_at' => Carbon::now()->addDays(rand(-5,5))
         //     ]);
         // }
-        Job::factory()->times(500)->create();
+        Task::factory()->times(500)->create();
     }
 }
