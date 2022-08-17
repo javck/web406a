@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cgy;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class CgyController extends Controller
@@ -102,5 +103,14 @@ class CgyController extends Controller
         // $cgy->delete();
         Cgy::destroy($cgy->id);
         return redirect('/cgies');
+    }
+
+    public function addTask()
+    {
+        $newTask = Task::create(['title' => '上課', 'salary' => 100 , 'enabled' => true , 'desc' => 
+        '學英文', 'cgy_id' => 3]);
+        $cgy1 = Cgy::find(1);
+        $cgy1->tasks()->save($newTask);
+        
     }
 }

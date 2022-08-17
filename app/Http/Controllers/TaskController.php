@@ -47,8 +47,9 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        $cgy1 = Cgy::find(1);
-        return $task->cgy()->associate($cgy1);
+        // $cgy1 = Cgy::find(1);
+        // return $task->cgy()->associate($cgy1);
+        return $task->users;
     }
 
     /**

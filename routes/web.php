@@ -52,6 +52,10 @@ Route::get('cgies/{cgy}','App\Http\Controllers\CgyController@show');
 Route::get('cgies/store','App\Http\Controllers\CgyController@store');
 Route::get('cgies/{cgy}/del','App\Http\Controllers\CgyController@destroy');
 Route::get('cgies/{cgy}/update','App\Http\Controllers\CgyController@update');
+Route::get('cgies/tasks/add','App\Http\Controllers\CgyController@addTask');
+Route::resource('users','App\Http\Controllers\UserController');
+Route::get('users/tasks/add','App\Http\Controllers\UserController@addTask');
+Route::get('users/tasks/remove','App\Http\Controllers\UserController@removeTask');
 
 Route::get('/', '\App\Http\Controllers\SiteController@renderWelcomePage');
 Route::view('/404-page', '404-page');

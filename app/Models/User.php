@@ -9,9 +9,9 @@ use Voyager;
 
 class User extends \TCG\Voyager\Models\User
 {
- use HasFactory, Notifiable;
+    use HasFactory, Notifiable;
 
- /**
+    /**
   * The attributes that are mass assignable.
   *
   * @var array
@@ -72,5 +72,11 @@ class User extends \TCG\Voyager\Models\User
   if (Auth::user()->role->name != 'super') {
    return $query->where('username', '!=', 'super');
   }
+ }
+
+ public function tasks()
+ {
+    return $this->belongsToMany(Task::class)->withTimestamps()->withPivot(['desc']);
+    //return $this->belongsToMany(Task::class)->withTimestamps();
  }
 }
